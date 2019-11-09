@@ -1,0 +1,22 @@
+# The "best" HTML to PDF converter "tool".
+pdf's are over 25 years old. Web standards are still evolving, but HTML, css, and ecmascript are nothing new.
+
+This kludge on top of chromium puppeteer, and you may discover it is the best HTML to PDF converter for your needs.
+The 20 lines of code are pretty straightforward. It loads a minimalist express server, uses puppeteer to render a
+page (chrome), and then tells puppeteer to wait for the page to render and then convert it to a pdf.
+
+# Security
+Lock down the url, remove the parameters, run it in a secure environment, firewall it, or
+containerize it and limit container resources. YOLO
+
+
+
+
+Fire up npm with
+npm start
+then convert webpages to a pdf with:
+http://localhost:8080/?scale=0.6&url=https://getbootstrap.com/docs/4.0/layout/grid/&chill=0
+The url takes 3 parameters:
+scale - resize the pdf
+url - the url you are printing
+chill - wait some extra time in ms to let the browser render
